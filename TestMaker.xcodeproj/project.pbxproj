@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0424B9C624BC88170004EB71 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0424B9C524BC88170004EB71 /* .gitignore */; };
+		0424B9C824BCA8DF0004EB71 /* TestObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424B9C724BCA8DF0004EB71 /* TestObject.swift */; };
+		0424B9CA24BCB3A60004EB71 /* TestsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424B9C924BCB3A60004EB71 /* TestsAPI.swift */; };
 		047B3FA524BC801A009D53B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B3FA424BC801A009D53B1 /* AppDelegate.swift */; };
 		047B3FA724BC801A009D53B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B3FA624BC801A009D53B1 /* SceneDelegate.swift */; };
 		047B3FA924BC801A009D53B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B3FA824BC801A009D53B1 /* ViewController.swift */; };
@@ -17,6 +19,9 @@
 		047B3FB424BC801D009D53B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 047B3FB224BC801D009D53B1 /* LaunchScreen.storyboard */; };
 		047B3FBF24BC801D009D53B1 /* TestMakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B3FBE24BC801D009D53B1 /* TestMakerTests.swift */; };
 		047B3FCA24BC801E009D53B1 /* TestMakerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B3FC924BC801E009D53B1 /* TestMakerUITests.swift */; };
+		55E5A8C050579B01F15AAB73 /* Pods_TestMakerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A33A96538DEDB881A42FC5 /* Pods_TestMakerTests.framework */; };
+		89C18F0F63765FC1985B3967 /* Pods_TestMaker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 316AFF591AC28779A156DD6D /* Pods_TestMaker.framework */; };
+		F34169BCC08917A030A8AB7B /* Pods_TestMaker_TestMakerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A2D5D6DFDAEF8B9FBF3BD9 /* Pods_TestMaker_TestMakerUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0397108D9252E3CFDF99E1D5 /* Pods-TestMaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestMaker.debug.xcconfig"; path = "Target Support Files/Pods-TestMaker/Pods-TestMaker.debug.xcconfig"; sourceTree = "<group>"; };
 		0424B9C524BC88170004EB71 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		0424B9C724BCA8DF0004EB71 /* TestObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestObject.swift; sourceTree = "<group>"; };
+		0424B9C924BCB3A60004EB71 /* TestsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsAPI.swift; sourceTree = "<group>"; };
 		047B3FA124BC801A009D53B1 /* TestMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		047B3FA424BC801A009D53B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		047B3FA624BC801A009D53B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +61,14 @@
 		047B3FC524BC801E009D53B1 /* TestMakerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestMakerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		047B3FC924BC801E009D53B1 /* TestMakerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMakerUITests.swift; sourceTree = "<group>"; };
 		047B3FCB24BC801E009D53B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22BB7C60C64E077BDD7772EC /* Pods-TestMaker-TestMakerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestMaker-TestMakerUITests.debug.xcconfig"; path = "Target Support Files/Pods-TestMaker-TestMakerUITests/Pods-TestMaker-TestMakerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2AF054641BA6CA0EBAD24AB5 /* Pods-TestMaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestMaker.release.xcconfig"; path = "Target Support Files/Pods-TestMaker/Pods-TestMaker.release.xcconfig"; sourceTree = "<group>"; };
+		316AFF591AC28779A156DD6D /* Pods_TestMaker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestMaker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		64A33A96538DEDB881A42FC5 /* Pods_TestMakerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestMakerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9A2D5D6DFDAEF8B9FBF3BD9 /* Pods_TestMaker_TestMakerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestMaker_TestMakerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9274D037EA0F45773D684AF /* Pods-TestMakerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestMakerTests.debug.xcconfig"; path = "Target Support Files/Pods-TestMakerTests/Pods-TestMakerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E9E20A2A655A87E985C3AF29 /* Pods-TestMakerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestMakerTests.release.xcconfig"; path = "Target Support Files/Pods-TestMakerTests/Pods-TestMakerTests.release.xcconfig"; sourceTree = "<group>"; };
+		ECD840914CF4A4EE2FE74EF9 /* Pods-TestMaker-TestMakerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestMaker-TestMakerUITests.release.xcconfig"; path = "Target Support Files/Pods-TestMaker-TestMakerUITests/Pods-TestMaker-TestMakerUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89C18F0F63765FC1985B3967 /* Pods_TestMaker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55E5A8C050579B01F15AAB73 /* Pods_TestMakerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F34169BCC08917A030A8AB7B /* Pods_TestMaker_TestMakerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +107,8 @@
 				047B3FBD24BC801D009D53B1 /* TestMakerTests */,
 				047B3FC824BC801E009D53B1 /* TestMakerUITests */,
 				047B3FA224BC801A009D53B1 /* Products */,
+				DFD28333210ED211C7FDD654 /* Pods */,
+				6AB6EFA06BCC4536D43F554C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +128,8 @@
 				047B3FA424BC801A009D53B1 /* AppDelegate.swift */,
 				047B3FA624BC801A009D53B1 /* SceneDelegate.swift */,
 				047B3FA824BC801A009D53B1 /* ViewController.swift */,
+				0424B9C724BCA8DF0004EB71 /* TestObject.swift */,
+				0424B9C924BCB3A60004EB71 /* TestsAPI.swift */,
 				047B3FAA24BC801A009D53B1 /* Main.storyboard */,
 				047B3FB024BC801D009D53B1 /* Assets.xcassets */,
 				047B3FB224BC801D009D53B1 /* LaunchScreen.storyboard */,
@@ -134,6 +157,30 @@
 			path = TestMakerUITests;
 			sourceTree = "<group>";
 		};
+		6AB6EFA06BCC4536D43F554C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				316AFF591AC28779A156DD6D /* Pods_TestMaker.framework */,
+				A9A2D5D6DFDAEF8B9FBF3BD9 /* Pods_TestMaker_TestMakerUITests.framework */,
+				64A33A96538DEDB881A42FC5 /* Pods_TestMakerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DFD28333210ED211C7FDD654 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0397108D9252E3CFDF99E1D5 /* Pods-TestMaker.debug.xcconfig */,
+				2AF054641BA6CA0EBAD24AB5 /* Pods-TestMaker.release.xcconfig */,
+				22BB7C60C64E077BDD7772EC /* Pods-TestMaker-TestMakerUITests.debug.xcconfig */,
+				ECD840914CF4A4EE2FE74EF9 /* Pods-TestMaker-TestMakerUITests.release.xcconfig */,
+				D9274D037EA0F45773D684AF /* Pods-TestMakerTests.debug.xcconfig */,
+				E9E20A2A655A87E985C3AF29 /* Pods-TestMakerTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,9 +188,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 047B3FCE24BC801E009D53B1 /* Build configuration list for PBXNativeTarget "TestMaker" */;
 			buildPhases = (
+				EA154CF58B58E962BD822D2C /* [CP] Check Pods Manifest.lock */,
 				047B3F9D24BC801A009D53B1 /* Sources */,
 				047B3F9E24BC801A009D53B1 /* Frameworks */,
 				047B3F9F24BC801A009D53B1 /* Resources */,
+				00B6E971AE20D899DEE70E27 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -158,6 +207,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 047B3FD124BC801E009D53B1 /* Build configuration list for PBXNativeTarget "TestMakerTests" */;
 			buildPhases = (
+				99CEAF5AF94D75E79D072DE0 /* [CP] Check Pods Manifest.lock */,
 				047B3FB624BC801D009D53B1 /* Sources */,
 				047B3FB724BC801D009D53B1 /* Frameworks */,
 				047B3FB824BC801D009D53B1 /* Resources */,
@@ -176,9 +226,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 047B3FD424BC801E009D53B1 /* Build configuration list for PBXNativeTarget "TestMakerUITests" */;
 			buildPhases = (
+				56C807DA0638D00848D1CB2A /* [CP] Check Pods Manifest.lock */,
 				047B3FC124BC801E009D53B1 /* Sources */,
 				047B3FC224BC801E009D53B1 /* Frameworks */,
 				047B3FC324BC801E009D53B1 /* Resources */,
+				496BEAF3C1060690319AEBC0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -261,14 +313,119 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		00B6E971AE20D899DEE70E27 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestMaker/Pods-TestMaker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestMaker/Pods-TestMaker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestMaker/Pods-TestMaker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		496BEAF3C1060690319AEBC0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestMaker-TestMakerUITests/Pods-TestMaker-TestMakerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestMaker-TestMakerUITests/Pods-TestMaker-TestMakerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestMaker-TestMakerUITests/Pods-TestMaker-TestMakerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		56C807DA0638D00848D1CB2A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestMaker-TestMakerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99CEAF5AF94D75E79D072DE0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestMakerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA154CF58B58E962BD822D2C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestMaker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		047B3F9D24BC801A009D53B1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0424B9C824BCA8DF0004EB71 /* TestObject.swift in Sources */,
 				047B3FA924BC801A009D53B1 /* ViewController.swift in Sources */,
 				047B3FA524BC801A009D53B1 /* AppDelegate.swift in Sources */,
 				047B3FAF24BC801A009D53B1 /* TestMaker.xcdatamodeld in Sources */,
+				0424B9CA24BCB3A60004EB71 /* TestsAPI.swift in Sources */,
 				047B3FA724BC801A009D53B1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,6 +597,7 @@
 		};
 		047B3FCF24BC801E009D53B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0397108D9252E3CFDF99E1D5 /* Pods-TestMaker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -457,6 +615,7 @@
 		};
 		047B3FD024BC801E009D53B1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2AF054641BA6CA0EBAD24AB5 /* Pods-TestMaker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -474,6 +633,7 @@
 		};
 		047B3FD224BC801E009D53B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9274D037EA0F45773D684AF /* Pods-TestMakerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -495,6 +655,7 @@
 		};
 		047B3FD324BC801E009D53B1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9E20A2A655A87E985C3AF29 /* Pods-TestMakerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -516,6 +677,7 @@
 		};
 		047B3FD524BC801E009D53B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22BB7C60C64E077BDD7772EC /* Pods-TestMaker-TestMakerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -535,6 +697,7 @@
 		};
 		047B3FD624BC801E009D53B1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECD840914CF4A4EE2FE74EF9 /* Pods-TestMaker-TestMakerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
