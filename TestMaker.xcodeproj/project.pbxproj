@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02A2B21F24C3692800A01B6B /* CreateTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A2B21E24C3692800A01B6B /* CreateTestController.swift */; };
+		02A2B22124C3695000A01B6B /* AddQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A2B22024C3695000A01B6B /* AddQuestionView.swift */; };
+		02A2B22324C3696E00A01B6B /* AddOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A2B22224C3696E00A01B6B /* AddOptionsView.swift */; };
 		02A2E4E424BF709400ABAE21 /* BackgroundBlureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A2E4E324BF709400ABAE21 /* BackgroundBlureView.swift */; };
 		02A2E4E624BF70D900ABAE21 /* AddTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A2E4E524BF70D900ABAE21 /* AddTestController.swift */; };
 		02A2E4E824BF710700ABAE21 /* AddNewTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A2E4E724BF710700ABAE21 /* AddNewTestView.swift */; };
@@ -45,6 +48,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02A2B21E24C3692800A01B6B /* CreateTestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTestController.swift; sourceTree = "<group>"; };
+		02A2B22024C3695000A01B6B /* AddQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestionView.swift; sourceTree = "<group>"; };
+		02A2B22224C3696E00A01B6B /* AddOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOptionsView.swift; sourceTree = "<group>"; };
 		02A2E4E324BF709400ABAE21 /* BackgroundBlureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundBlureView.swift; sourceTree = "<group>"; };
 		02A2E4E524BF70D900ABAE21 /* AddTestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTestController.swift; sourceTree = "<group>"; };
 		02A2E4E724BF710700ABAE21 /* AddNewTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTestView.swift; sourceTree = "<group>"; };
@@ -111,6 +117,9 @@
 				02A2E4E324BF709400ABAE21 /* BackgroundBlureView.swift */,
 				02A2E4E524BF70D900ABAE21 /* AddTestController.swift */,
 				02A2E4E724BF710700ABAE21 /* AddNewTestView.swift */,
+				02A2B21E24C3692800A01B6B /* CreateTestController.swift */,
+				02A2B22024C3695000A01B6B /* AddQuestionView.swift */,
+				02A2B22224C3696E00A01B6B /* AddOptionsView.swift */,
 			);
 			path = AddScreen;
 			sourceTree = "<group>";
@@ -444,7 +453,10 @@
 				047B3FAF24BC801A009D53B1 /* TestMaker.xcdatamodeld in Sources */,
 				02A2E4E824BF710700ABAE21 /* AddNewTestView.swift in Sources */,
 				0424B9CA24BCB3A60004EB71 /* TestsAPI.swift in Sources */,
+				02A2B22324C3696E00A01B6B /* AddOptionsView.swift in Sources */,
+				02A2B21F24C3692800A01B6B /* CreateTestController.swift in Sources */,
 				047B3FA724BC801A009D53B1 /* SceneDelegate.swift in Sources */,
+				02A2B22124C3695000A01B6B /* AddQuestionView.swift in Sources */,
 				02A2E4E624BF70D900ABAE21 /* AddTestController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
