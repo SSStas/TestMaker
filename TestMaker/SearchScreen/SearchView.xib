@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchTextField" customModule="TestMaker" customModuleProvider="target">
+            <connections>
+                <outlet property="topConstraint" destination="Qt7-Ez-GgF" id="b2P-dY-EgH"/>
+                <outlet property="view" destination="iN0-l3-epB" id="hJf-SE-m81"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="searchTextField" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="v0s-c4-WEp">
+                    <rect key="frame" x="0.0" y="5" width="414" height="115"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7p-qH-IGe">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="28"/>
+                            <attributedString key="attributedText">
+                                <fragment content="TestMaker">
+                                    <attributes>
+                                        <font key="NSFont" size="24" name="Helvetica"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <searchBar contentMode="redraw" verticalHuggingPriority="249" placeholder="Search test for you" translatesAutoresizingMaskIntoConstraints="NO" id="k6E-sZ-ms1">
+                            <rect key="frame" x="0.0" y="30" width="414" height="53"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUS-Q9-BA1">
+                            <rect key="frame" x="0.0" y="85" width="414" height="30"/>
+                            <state key="normal" title="Additional search parameters">
+                                <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </state>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="v0s-c4-WEp" secondAttribute="trailing" id="DEN-L3-L98"/>
+                <constraint firstItem="v0s-c4-WEp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="Qt7-Ez-GgF"/>
+                <constraint firstAttribute="bottom" secondItem="v0s-c4-WEp" secondAttribute="bottom" id="vZI-3x-S1i"/>
+                <constraint firstItem="v0s-c4-WEp" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="y5U-d4-lSX"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-1075.3623188405797" y="-170.75892857142856"/>
+        </view>
+    </objects>
+</document>

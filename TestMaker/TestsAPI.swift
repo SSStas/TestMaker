@@ -9,9 +9,16 @@
 import Foundation
 import UIKit
 import Alamofire
+import CryptoKit
 
 class TestsAPI {
     let url = "https://testmakerapi.herokuapp.com"
+    
+    func md5(_ text: String) -> String {
+        let str = Insecure.MD5.hash(data: text.data(using: .utf8)!).description
+        let index = str.index(str.endIndex, offsetBy: 12 - str.count)
+        return String(str.suffix(from: index))
+    }
     
     /// Gets list of all tests from specific user or from everyone
     func getTests(uid: String = "", completion: @escaping ([Test]) -> Void) {
@@ -58,34 +65,33 @@ class TestsAPI {
             switch response.result {
                 case .failure(let err):
                     print(err)
-            case .success(let res):
-                completion(res.users)
+                case .success(let res):
+                    completion(res.users)
             }
         }
     }
     
-    
+    /// Signs in an existing user
     func signIn(login: String, password: String, completion: @escaping (String) -> Void) {
         
-        let fullURL = url + "/signin"
+        let fullURL = url + "/signin/\(login)/\(password)"
         
-        AF.request(fullURL, method: .get).authenticate(username: login, password: password).validate(statusCode: 200..<300).response
+        AF.request(fullURL, method: .get, encoding: JSONEncoding.default).validate(statusCode: 200..<300).responseString
         { response in
             switch response.result {
             case .success(let res):
-                completion(String(data: res!, encoding: .utf8) ?? "not exist")
+                completion(res)
             case .failure(let err):
-                print("***")
                 print(err)
             }
         }
     }
     
-    /// Creats a new user
+    /// Signs up a new user
     func signUp(login: String, password: String) {
         let params: [String: Any] = [
             "login": login,
-            "password": password
+            "password": self.md5(password)
         ]
         let fullURL = url + "/registrate"
         
@@ -94,8 +100,8 @@ class TestsAPI {
             switch response.result {
             case .success(let value):
                 print(value)
-            case .failure(let error):
-                print(error)
+            case .failure(let err):
+                print(err)
             }
         }
     }
@@ -118,8 +124,8 @@ class TestsAPI {
             switch response.result {
             case .success(let value):
                 print(value)
-            case .failure(let error):
-                print(error)
+            case .failure(let err):
+                print(err)
             }
         }
     }
