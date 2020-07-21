@@ -13,6 +13,8 @@
 		02A2E4E424BF709400ABAE21 /* BackgroundBlureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A2E4E324BF709400ABAE21 /* BackgroundBlureView.swift */; };
 		02A2E4E624BF70D900ABAE21 /* AddTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A2E4E524BF70D900ABAE21 /* AddTestController.swift */; };
 		02A2E4E824BF710700ABAE21 /* AddNewTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A2E4E724BF710700ABAE21 /* AddNewTestView.swift */; };
+		02CD118D24C75A9A0076F188 /* AddTestController + iPhoneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CD118C24C75A9A0076F188 /* AddTestController + iPhoneExtension.swift */; };
+		02CD118F24C75B3C0076F188 /* CreateTestController + iPhoneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CD118E24C75B3C0076F188 /* CreateTestController + iPhoneExtension.swift */; };
 		0424B9C624BC88170004EB71 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0424B9C524BC88170004EB71 /* .gitignore */; };
 		0424B9C824BCA8DF0004EB71 /* TestObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424B9C724BCA8DF0004EB71 /* TestObject.swift */; };
 		0424B9CA24BCB3A60004EB71 /* TestsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424B9C924BCB3A60004EB71 /* TestsAPI.swift */; };
@@ -54,6 +56,8 @@
 		02A2E4E324BF709400ABAE21 /* BackgroundBlureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundBlureView.swift; sourceTree = "<group>"; };
 		02A2E4E524BF70D900ABAE21 /* AddTestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTestController.swift; sourceTree = "<group>"; };
 		02A2E4E724BF710700ABAE21 /* AddNewTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTestView.swift; sourceTree = "<group>"; };
+		02CD118C24C75A9A0076F188 /* AddTestController + iPhoneExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddTestController + iPhoneExtension.swift"; sourceTree = "<group>"; };
+		02CD118E24C75B3C0076F188 /* CreateTestController + iPhoneExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateTestController + iPhoneExtension.swift"; sourceTree = "<group>"; };
 		0397108D9252E3CFDF99E1D5 /* Pods-TestMaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestMaker.debug.xcconfig"; path = "Target Support Files/Pods-TestMaker/Pods-TestMaker.debug.xcconfig"; sourceTree = "<group>"; };
 		0424B9C524BC88170004EB71 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		0424B9C724BCA8DF0004EB71 /* TestObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestObject.swift; sourceTree = "<group>"; };
@@ -115,13 +119,31 @@
 			isa = PBXGroup;
 			children = (
 				02A2E4E324BF709400ABAE21 /* BackgroundBlureView.swift */,
+				02CD118A24C758AF0076F188 /* AddTest */,
+				02CD118B24C758C50076F188 /* CreateTest */,
+			);
+			path = AddScreen;
+			sourceTree = "<group>";
+		};
+		02CD118A24C758AF0076F188 /* AddTest */ = {
+			isa = PBXGroup;
+			children = (
 				02A2E4E524BF70D900ABAE21 /* AddTestController.swift */,
 				02A2E4E724BF710700ABAE21 /* AddNewTestView.swift */,
+				02CD118C24C75A9A0076F188 /* AddTestController + iPhoneExtension.swift */,
+			);
+			path = AddTest;
+			sourceTree = "<group>";
+		};
+		02CD118B24C758C50076F188 /* CreateTest */ = {
+			isa = PBXGroup;
+			children = (
 				02A2B21E24C3692800A01B6B /* CreateTestController.swift */,
 				02A2B22024C3695000A01B6B /* AddQuestionView.swift */,
 				02A2B22224C3696E00A01B6B /* AddOptionsView.swift */,
+				02CD118E24C75B3C0076F188 /* CreateTestController + iPhoneExtension.swift */,
 			);
-			path = AddScreen;
+			path = CreateTest;
 			sourceTree = "<group>";
 		};
 		047B3F9824BC801A009D53B1 = {
@@ -447,10 +469,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0424B9C824BCA8DF0004EB71 /* TestObject.swift in Sources */,
+				02CD118D24C75A9A0076F188 /* AddTestController + iPhoneExtension.swift in Sources */,
 				047B3FA924BC801A009D53B1 /* ViewController.swift in Sources */,
 				047B3FA524BC801A009D53B1 /* AppDelegate.swift in Sources */,
 				02A2E4E424BF709400ABAE21 /* BackgroundBlureView.swift in Sources */,
 				047B3FAF24BC801A009D53B1 /* TestMaker.xcdatamodeld in Sources */,
+				02CD118F24C75B3C0076F188 /* CreateTestController + iPhoneExtension.swift in Sources */,
 				02A2E4E824BF710700ABAE21 /* AddNewTestView.swift in Sources */,
 				0424B9CA24BCB3A60004EB71 /* TestsAPI.swift in Sources */,
 				02A2B22324C3696E00A01B6B /* AddOptionsView.swift in Sources */,

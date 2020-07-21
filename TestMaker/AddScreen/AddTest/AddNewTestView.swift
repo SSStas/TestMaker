@@ -1,9 +1,9 @@
 //
-//  AddNewTestView.swift
-//  TestMaker
+//  View.swift
+//  TEstaddScreen
 //
-//  Created by Чурсина Юлия on 15.07.2020.
-//  Copyright © 2020 Apples. All rights reserved.
+//  Created by Чурсина Юлия on 14.07.2020.
+//  Copyright © 2020 Julia. All rights reserved.
 //
 
 import UIKit
@@ -209,4 +209,3 @@ class AddView: BackgroundBlureView {
         ])
     }
 }
-

@@ -1,9 +1,9 @@
 //
-//  AddTestController.swift
-//  TestMaker
+//  AddScreen.swift
+//  TEstaddScreen
 //
-//  Created by Чурсина Юлия on 15.07.2020.
-//  Copyright © 2020 Apples. All rights reserved.
+//  Created by Чурсина Юлия on 14.07.2020.
+//  Copyright © 2020 Julia. All rights reserved.
 //
 
 import UIKit
@@ -13,10 +13,19 @@ class AddTestController: UIViewController {
     lazy var backgroundView = BackgroundBlureView()
     lazy var addView = AddView()
     
+    let iphoneContentView = UIView()
+    lazy var iphoneScrollView: UIScrollView = {
+        
+        let scroll = UIScrollView()
+        scroll.backgroundColor = .clear
+        return scroll
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupBackground()
+        setupIphoneViews()
     }
     
     private func setupBackground() {
@@ -35,14 +44,5 @@ class AddTestController: UIViewController {
             backgroundView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
         ])
         
-        self.view.addSubview(addView)
-        
-        NSLayoutConstraint.activate([
-            addView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 100),
-            addView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            addView.widthAnchor.constraint(equalTo: view.widthAnchor),
-            addView.heightAnchor.constraint(equalToConstant: 350)
-        ])
     }
 }
-

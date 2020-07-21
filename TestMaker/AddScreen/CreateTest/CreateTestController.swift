@@ -1,6 +1,6 @@
 //
 //  CreateTestController.swift
-//  TestMaker
+//  TEstaddScreen
 //
 //  Created by Чурсина Юлия on 16.07.2020.
 //  Copyright © 2020 Julia. All rights reserved.
@@ -11,22 +11,30 @@ import UIKit
 class CreateTestController: UIViewController {
     
     lazy var backgroundView = BackgroundBlureView()
-    lazy var addGuestionView = AddQuestionView()
+    lazy var addQuestion = AddQuestionView()
     lazy var addOptions = AddOptionsView()
+    
+    let iphoneContentView = UIView()
+    lazy var iphoneScrollView: UIScrollView = {
+        
+        let scroll = UIScrollView()
+        scroll.backgroundColor = .clear
+        return scroll
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupBackground()
+        addTapGestureToHideKeyboard()
+        
+        backgroundView.backgroundImageView.tintColor = .blue
     }
     
     private func setupBackground() {
         
         backgroundView.translatesAutoresizingMaskIntoConstraints = false
-        addOptions.translatesAutoresizingMaskIntoConstraints = false
-        
         backgroundView.setupBackgroundView(isBackground: true, isBlure: true, isVibrancy: false)
-        
         self.view.addSubview(backgroundView)
         
         NSLayoutConstraint.activate([
@@ -36,15 +44,17 @@ class CreateTestController: UIViewController {
             backgroundView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
         ])
         
-        self.view.addSubview(addOptions)
-        
-        NSLayoutConstraint.activate([
-            addOptions.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 100),
-            addOptions.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            addOptions.widthAnchor.constraint(equalTo: view.widthAnchor),
-            addOptions.heightAnchor.constraint(equalToConstant: 350)
-        ])
+        setupIphoneViews()
     }
+    
+    func addTapGestureToHideKeyboard() {
+        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(view.endEditing))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    
+    
 }
+
 
 

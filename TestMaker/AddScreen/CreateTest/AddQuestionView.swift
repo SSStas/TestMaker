@@ -1,6 +1,6 @@
 //
-//  AddQuestionView.swift
-//  TestMaker
+//  addGuestionView.swift
+//  TEstaddScreen
 //
 //  Created by Чурсина Юлия on 16.07.2020.
 //  Copyright © 2020 Julia. All rights reserved.
@@ -11,7 +11,7 @@ import UIKit
 class AddQuestionView: BackgroundBlureView {
     
     lazy var inputGuestionLable = UILabel()
-    lazy var inputGuestionTextField = UITextField()
+    lazy var inputGuestionTextField = UITextView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,6 +23,13 @@ class AddQuestionView: BackgroundBlureView {
         super.init(coder: coder)
         
         setupViews()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        self.layer.masksToBounds = true
+        self.layer.cornerRadius = self.bounds.width / 7
     }
     
     private func setupViews() {
@@ -43,25 +50,26 @@ class AddQuestionView: BackgroundBlureView {
         
         NSLayoutConstraint.activate([
             inputGuestionLable.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8),
-            inputGuestionLable.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
-            inputGuestionLable.topAnchor.constraint(equalTo: self.topAnchor, constant: 8)
+            inputGuestionLable.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15),
+            inputGuestionLable.topAnchor.constraint(equalTo: self.topAnchor, constant: 20)
         ])
     }
+    
     private func setupInputGuestionTextField() {
-        
         inputGuestionTextField.translatesAutoresizingMaskIntoConstraints = false
-        
         
         addNewView(inputGuestionTextField)
         
-        inputGuestionTextField.placeholder = "Вопрос..."
+        inputGuestionTextField.backgroundColor = .red
+        inputGuestionTextField.text = "Вопрос..."
         inputGuestionTextField.font = .systemFont(ofSize: 20)
-        inputGuestionTextField.textColor = .gray
+        inputGuestionTextField.backgroundColor = .clear
         
         NSLayoutConstraint.activate([
             inputGuestionTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8),
-            inputGuestionTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
-            inputGuestionTextField.topAnchor.constraint(equalTo: inputGuestionLable.bottomAnchor, constant: 8)
+            inputGuestionTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15),
+            inputGuestionTextField.topAnchor.constraint(equalTo: inputGuestionLable.bottomAnchor, constant: 15),
+            inputGuestionTextField.heightAnchor.constraint(equalToConstant: 100)
         ])
     }
 }
