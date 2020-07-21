@@ -9,12 +9,25 @@
 import Foundation
 import UIKit
 
-class TestControl {
+class TestsParameters {
     
-    var searchedTests: [Test]
+    var searchedTests: [TestDescription]
+    var query = ""
     
     init() {
         self.searchedTests = []
+    }
+    
+    func getTestNumParam(_ index: Int, _ isGames: Bool) -> String {
+        let num = (isGames ? self.searchedTests[index].games : self.searchedTests[index].likes)
+        switch num {
+        case 1000..<1000000:
+            return String(num / 1000) + "K"
+        case 1000000..<1000000000:
+            return String(num / 1000000) + "M"
+        default:
+            return String(num)
+        }
     }
     
 }

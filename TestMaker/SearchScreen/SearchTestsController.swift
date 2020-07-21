@@ -15,11 +15,12 @@ class SearchTestsController: UIViewController, UITableViewDelegate, UITableViewD
     lazy var testsTableView = UITableView()
     
     var constants: Constants?
-    var tests: TestControl = TestControl()
+    var tests: TestsParameters = TestsParameters()
     var api: TestsAPI = TestsAPI()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -48,6 +49,8 @@ class SearchTestsController: UIViewController, UITableViewDelegate, UITableViewD
         searchTextField.translatesAutoresizingMaskIntoConstraints = false
         
         self.view.addSubview(searchTextField)
+        self.searchTextField.searchFunc = self.queryChanged
+        self.searchTextField.blockFunc = self.blockTableCellsTap
         
         let topSafeAreaHeight = self.constants!.topSafeAreaHeight
         self.searchTextField.topConstraint.constant = topSafeAreaHeight
@@ -71,7 +74,6 @@ class SearchTestsController: UIViewController, UITableViewDelegate, UITableViewD
         testsTableView.register(UINib(nibName: "TestsTableViewCell", bundle: nil), forCellReuseIdentifier: "TestsTableViewCell")
         testsTableView.tableFooterView = UIView()
         testsTableView.rowHeight = 120
-        testsTableView.allowsSelection = false
         testsTableView.delegate = self
         
         NSLayoutConstraint.activate([
@@ -85,12 +87,21 @@ class SearchTestsController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func refresh() {
-        api.getTests() { [weak self] t in
-            self?.tests.searchedTests = t
+        api.getTestsDescriptions(query: self.tests.query) { [weak self] t in
+            self?.tests.searchedTests = t 
             self?.testsTableView.reloadData()
         }
     }
-
+    
+    func queryChanged(query: String) {
+        self.tests.query = query
+        refresh()
+    }
+    
+    func blockTableCellsTap(_ isBlocking: Bool) {
+        testsTableView.allowsSelection = isBlocking
+    }
+    
 }
 
 extension SearchTestsController {
@@ -103,8 +114,25 @@ extension SearchTestsController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TestsTableViewCell", for: indexPath) as? TestsTableViewCell else {
             return TestsTableViewCell()
         }
-        cell.setupWith(title: tests.searchedTests[indexPath.row].title, author: tests.searchedTests[indexPath.row].author.name ?? "anonymous", questionsNum: tests.searchedTests[indexPath.row].questions.count)
+        cell.setupWith(title: tests.searchedTests[indexPath.row].title, author: tests.searchedTests[indexPath.row].author.name, questionsNum: 0, games: tests.getTestNumParam(indexPath.row, true), likes: tests.getTestNumParam(indexPath.row, false))
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Title: \(tests.searchedTests[indexPath.row].title)")
+    }
+    
+    
 }
 
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}

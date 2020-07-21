@@ -10,29 +10,37 @@ import Foundation
 import UIKit
 
 struct User: Decodable {
-    var name: String?
-    var login: String?
-    var password: String?
+    var login: String
+    var password: String
     var id: String
 }
 
-struct Question: Decodable {
-    var question: String
-    var answers: [String]   // создать массив кортежев (String, Bool) <=> (ответ, его корректность)
-    var correct: String     // убрать по возможности
-    //var imageURL: String?      // добавить в api
+struct Author: Decodable {
+    var name: String
+    var id: String
 }
 
-struct Test: Decodable {
+struct TestDescription: Decodable {
     var title: String
-    var author: User
-    var questions: [Question]
+    var description: String
+    var isGlobal: Bool
+    var author: Author
+    var games: Int
+    var likes: Int
+    var id: String
+    var questions: [Question]?
 }
 
-struct Content: Decodable {
-    var tests: [Test]
+struct ContentDescription: Decodable {
+    var tests: [TestDescription]
 }
 
 struct Members: Decodable {
     var users: [User]
+}
+
+struct Question: Decodable {
+    var question: String
+    var answers: [String]
+    var correct: [String]
 }
