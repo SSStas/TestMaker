@@ -26,6 +26,9 @@ class AddTestController: UIViewController {
         
         setupBackground()
         setupIphoneViews()
+        
+        addView.delegate = self
+        backgroundView.backgroundImageView.tintColor = .blue
     }
     
     private func setupBackground() {
@@ -45,4 +48,12 @@ class AddTestController: UIViewController {
         ])
         
     }
+}
+
+extension AddTestController: ToCreateQuestionDelegate {
+    func toCreateQuestion() {
+        navigationController?.show(CreateTestController(), sender: self)
+    }
+    
+    
 }

@@ -16,7 +16,6 @@ class CreateTestController: UIViewController {
     
     let iphoneContentView = UIView()
     lazy var iphoneScrollView: UIScrollView = {
-        
         let scroll = UIScrollView()
         scroll.backgroundColor = .clear
         return scroll

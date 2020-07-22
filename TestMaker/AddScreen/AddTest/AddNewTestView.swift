@@ -25,6 +25,8 @@ class AddView: BackgroundBlureView {
     
     lazy var addTestView = UIView()
     
+    weak var delegate: ToCreateQuestionDelegate?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -127,7 +129,7 @@ class AddView: BackgroundBlureView {
         
         nextButton.translatesAutoresizingMaskIntoConstraints = false
         
-        
+        nextButton.addTarget(self, action: #selector(toNextAddScreen), for: .touchUpInside)
         addNewView(nextButton)
         
         
@@ -136,9 +138,13 @@ class AddView: BackgroundBlureView {
         
         NSLayoutConstraint.activate([
             nextButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8),
-           nextButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
+            nextButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
             nextButton.topAnchor.constraint(equalTo: testPhotoImage.bottomAnchor, constant: 8)
         ])
+    }
+    
+    @objc func toNextAddScreen() {
+        delegate?.toCreateQuestion()
     }
     
     private func setupTestNameTextField() {
@@ -208,4 +214,9 @@ class AddView: BackgroundBlureView {
             testPhotoImage.heightAnchor.constraint(equalToConstant: 80)
         ])
     }
+}
+
+protocol ToCreateQuestionDelegate: class {
+    
+    func toCreateQuestion()
 }
