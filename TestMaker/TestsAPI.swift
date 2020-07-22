@@ -9,20 +9,28 @@
 import Foundation
 import UIKit
 import Alamofire
+import CryptoKit
 
 class TestsAPI {
     let url = "https://testmakerapi.herokuapp.com"
     
+    func md5(_ text: String) -> String {
+        let str = Insecure.MD5.hash(data: text.data(using: .utf8)!).description
+        let index = str.index(str.endIndex, offsetBy: 12 - str.count)
+        return String(str.suffix(from: index))
+    }
+    
     /// Gets list of all tests from specific user or from everyone
-    func getTests(uid: String = "", completion: @escaping ([Test]) -> Void) {
+    func getTestsDescriptions(query: String = "", count: Int = 30, completion: @escaping ([TestDescription]) -> Void) {
         
-        let fullURL = url + "/tests" + (uid == "" ? "" : "/user/\(uid)")
+        let fullURL = url + "/tests" + (query == "" ? "" : "/\(query.encodeUrl)/\(count)")
         
         AF.request(fullURL, method: .get, encoding: URLEncoding.default)
-        .responseDecodable(of: Content.self)
+        .responseDecodable(of: ContentDescription.self)
         { /*[weak self]*/ response in
             switch response.result {
                 case .failure(let err):
+                    print("***")
                     print(err)
             case .success(let res):
                 completion(res.tests)
@@ -30,13 +38,13 @@ class TestsAPI {
         }
     }
     
-    /// Gets a test with a specific id
-    func getTest(id: String, completion: @escaping (Test) -> Void) {
+    /// Gets a full test information with a specific id
+    func getFullTest(id: String, completion: @escaping (TestDescription) -> Void) {
         
         let fullURL = url + "/test/\(id)"
         
         AF.request(fullURL, method: .get, encoding: URLEncoding.default)
-        .responseDecodable(of: Test.self)
+        .responseDecodable(of: TestDescription.self)
         { /*[weak self]*/ response in
             switch response.result {
                 case .failure(let err):
@@ -58,94 +66,97 @@ class TestsAPI {
             switch response.result {
                 case .failure(let err):
                     print(err)
-            case .success(let res):
-                completion(res.users)
+                case .success(let res):
+                    completion(res.users)
             }
         }
     }
     
-    
+    /// Signs in an existing user
     func signIn(login: String, password: String, completion: @escaping (String) -> Void) {
         
-        let fullURL = url + "/signin"
+        let fullURL = url + "/signin/\(login.encodeUrl)/\(password)"
         
-        AF.request(fullURL, method: .get).authenticate(username: login, password: password).validate(statusCode: 200..<300).response
+        AF.request(fullURL, method: .get, encoding: JSONEncoding.default).validate(statusCode: 200..<300).responseString
         { response in
             switch response.result {
             case .success(let res):
-                completion(String(data: res!, encoding: .utf8) ?? "not exist")
+                completion(res)
             case .failure(let err):
-                print("***")
                 print(err)
             }
         }
     }
     
-    /// Creats a new user
-    func signUp(login: String, password: String) {
+    private func UnsafeSignUp(login: String, password: String, completion: @escaping () -> Void) {
         let params: [String: Any] = [
             "login": login,
-            "password": password
+            "password": self.md5(password)
         ]
         let fullURL = url + "/registrate"
         
         AF.request(fullURL, method: .put, parameters: params, encoding: JSONEncoding.default).responseJSON
         { response in
             switch response.result {
-            case .success(let value):
-                print(value)
-            case .failure(let error):
-                print(error)
+            case .success(let res):
+                print(res)
+                completion()
+            case .failure(let err):
+                print(err)
             }
         }
     }
     
+    /// Signs up a new user
+    func signUp(login: String, password: String, completion: @escaping (Bool) -> Void) {
+        self.getUsers(completion: {users in
+            for user in users where user.login == login {
+                completion(false)
+                return
+            }
+            self.UnsafeSignUp(login: login, password: password, completion: {
+                completion(true)
+            })
+        })
+    }
+    
     /// Creates a new test
-    func createNewTest(title: String, author: User, questions: [Question]) {
+    func createNewTest(testDescription: TestDescription) {
         var questionsArr = [[String : Any]]()
-        for q in questions {
+        for q in testDescription.questions ?? [] {
             questionsArr.append(["question" : q.question, "answers" : q.answers, "correct" : q.correct])
         }
         let params: [String: Any] = [
-            "title": title,
-            "author": ["name": author.name ?? "anonymous", "id": author.id],
-            "questions" : questionsArr
+            "title": testDescription.title,
+            "description": testDescription.description,
+            "isGlobal": testDescription.isGlobal,
+            "author": ["name": testDescription.author.name, "id": testDescription.author.id],
+            "questions" : questionsArr,
+            "games": 0,
+            "likes": 0
         ]
         let fullURL = url + "/addtest"
         
         AF.request(fullURL, method: .put, parameters: params, encoding: JSONEncoding.default).responseJSON
         { response in
             switch response.result {
-            case .success(let value):
-                print(value)
-            case .failure(let error):
-                print(error)
+            case .success(let res):
+                print(res)
+            case .failure(let err):
+                print(err)
             }
         }
     }
     
-    /// Функция для тестирования класса TestAPI
-    func forTestAPI() {
-        func printLine() {
-            print("----------------")
-        }
-        
-        self.getTests() { t in
-            for i in t {
-                print("\(i.title) by \(i.author.name ?? "anonymous") <\(i.author.id)>")
-                for q in i.questions {
-                    printLine()
-                    print(q.question)
-                    printLine()
-                    for j in q.answers {
-                        print(j)
-                    }
-                    print("Correct answer: \(q.correct)")
-                }
-            }
-        }
-        
+}
+
+extension String{
+    var encodeUrl : String
+    {
+        return self.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!
     }
-    //
-    
+    var decodeUrl : String
+    {
+        return self.removingPercentEncoding!
+    }
 }
