@@ -19,7 +19,7 @@ class TestsParameters {
     }
     
     func getTestNumParam(_ index: Int, _ isGames: Bool) -> String {
-        let num = (isGames ? self.searchedTests[index].games : self.searchedTests[index].likes)
+        let num = (isGames ? self.searchedTests[index].games! : self.searchedTests[index].likes)
         switch num {
         case 1000..<1000000:
             return String(num / 1000) + "K"

@@ -98,14 +98,10 @@ class TestsTableViewCell: UITableViewCell {
     
     func setupWith(title: String, author: String, questionsNum: Int, games: String, likes: String) {
         titleLabel.text = title
-        authorLabel.text = "By: \(author)"
+        authorLabel.text = "От: \(author)"
         questionsLabel.text = "❓: \(questionsNum)"
-        gamesLabel.text = "🎮 : " + games
+        gamesLabel.text = "🎮: " + games
         likesLabel.text = "👍: " + likes
-    }
-
-    func clickOnCell() {
-        print(self.titleLabel.text ?? "---")
     }
     
 }

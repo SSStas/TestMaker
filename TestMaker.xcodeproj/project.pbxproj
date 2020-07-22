@@ -10,6 +10,9 @@
 		02A2E4E424BF709400ABAE21 /* BackgroundBlureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A2E4E324BF709400ABAE21 /* BackgroundBlureView.swift */; };
 		02A2E4E624BF70D900ABAE21 /* AddTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A2E4E524BF70D900ABAE21 /* AddTestController.swift */; };
 		02A2E4E824BF710700ABAE21 /* AddNewTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A2E4E724BF710700ABAE21 /* AddNewTestView.swift */; };
+		04147CE924C7867100895279 /* TestPassingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04147CE824C7867100895279 /* TestPassingController.swift */; };
+		04147CEB24C812D500895279 /* StartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04147CEA24C812D500895279 /* StartView.xib */; };
+		04147CED24C84D9C00895279 /* TestPassingSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04147CEC24C84D9B00895279 /* TestPassingSubviews.swift */; };
 		0424B9C624BC88170004EB71 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0424B9C524BC88170004EB71 /* .gitignore */; };
 		0424B9C824BCA8DF0004EB71 /* TestObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424B9C724BCA8DF0004EB71 /* TestObject.swift */; };
 		0424B9CA24BCB3A60004EB71 /* TestsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424B9C924BCB3A60004EB71 /* TestsAPI.swift */; };
@@ -54,6 +57,9 @@
 		02A2E4E524BF70D900ABAE21 /* AddTestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTestController.swift; sourceTree = "<group>"; };
 		02A2E4E724BF710700ABAE21 /* AddNewTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTestView.swift; sourceTree = "<group>"; };
 		0397108D9252E3CFDF99E1D5 /* Pods-TestMaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestMaker.debug.xcconfig"; path = "Target Support Files/Pods-TestMaker/Pods-TestMaker.debug.xcconfig"; sourceTree = "<group>"; };
+		04147CE824C7867100895279 /* TestPassingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPassingController.swift; sourceTree = "<group>"; };
+		04147CEA24C812D500895279 /* StartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartView.xib; sourceTree = "<group>"; };
+		04147CEC24C84D9B00895279 /* TestPassingSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPassingSubviews.swift; sourceTree = "<group>"; };
 		0424B9C524BC88170004EB71 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		0424B9C724BCA8DF0004EB71 /* TestObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestObject.swift; sourceTree = "<group>"; };
 		0424B9C924BCB3A60004EB71 /* TestsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsAPI.swift; sourceTree = "<group>"; };
@@ -125,10 +131,19 @@
 			path = AddScreen;
 			sourceTree = "<group>";
 		};
+		04147CE724C784A500895279 /* TestPassingScreen */ = {
+			isa = PBXGroup;
+			children = (
+				04147CE824C7867100895279 /* TestPassingController.swift */,
+				04147CEC24C84D9B00895279 /* TestPassingSubviews.swift */,
+				04147CEA24C812D500895279 /* StartView.xib */,
+			);
+			path = TestPassingScreen;
+			sourceTree = "<group>";
+		};
 		0424B9CD24C06D430004EB71 /* SearchScreen */ = {
 			isa = PBXGroup;
 			children = (
-				0424B9D424C32A610004EB71 /* Tests.swift */,
 				0424B9D624C37E350004EB71 /* SearchTestsSubviews.swift */,
 				0424B9CB24C0623F0004EB71 /* SearchTestsController.swift */,
 				0424B9CE24C06DC30004EB71 /* SearchView.xib */,
@@ -165,6 +180,8 @@
 			children = (
 				020ACFDF24BDF53B00DEB73E /* AddScreen */,
 				0424B9CD24C06D430004EB71 /* SearchScreen */,
+				04147CE724C784A500895279 /* TestPassingScreen */,
+				0424B9D424C32A610004EB71 /* Tests.swift */,
 				047B3FA424BC801A009D53B1 /* AppDelegate.swift */,
 				047B3FA624BC801A009D53B1 /* SceneDelegate.swift */,
 				047B3FA824BC801A009D53B1 /* ViewController.swift */,
@@ -334,6 +351,7 @@
 				047B3FB424BC801D009D53B1 /* LaunchScreen.storyboard in Resources */,
 				047B3FB124BC801D009D53B1 /* Assets.xcassets in Resources */,
 				047B3FAC24BC801A009D53B1 /* Main.storyboard in Resources */,
+				04147CEB24C812D500895279 /* StartView.xib in Resources */,
 				0424B9D124C1D3AB0004EB71 /* TestsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,6 +485,7 @@
 				047B3FA924BC801A009D53B1 /* ViewController.swift in Sources */,
 				0424B9D724C37E360004EB71 /* SearchTestsSubviews.swift in Sources */,
 				047B3FA524BC801A009D53B1 /* AppDelegate.swift in Sources */,
+				04147CED24C84D9C00895279 /* TestPassingSubviews.swift in Sources */,
 				0424B9D524C32A620004EB71 /* Tests.swift in Sources */,
 				02A2E4E424BF709400ABAE21 /* BackgroundBlureView.swift in Sources */,
 				047B3FAF24BC801A009D53B1 /* TestMaker.xcdatamodeld in Sources */,
@@ -474,6 +493,7 @@
 				0424B9CA24BCB3A60004EB71 /* TestsAPI.swift in Sources */,
 				047B3FA724BC801A009D53B1 /* SceneDelegate.swift in Sources */,
 				02A2E4E624BF70D900ABAE21 /* AddTestController.swift in Sources */,
+				04147CE924C7867100895279 /* TestPassingController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -25,7 +25,7 @@ struct TestDescription: Decodable {
     var description: String
     var isGlobal: Bool
     var author: Author
-    var games: Int
+    var games: Int?
     var likes: Int
     var id: String
     var questions: [Question]?

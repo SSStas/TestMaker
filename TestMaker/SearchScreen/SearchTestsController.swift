@@ -6,6 +6,7 @@
 //  Copyright © 2020 Apples. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 class SearchTestsController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -14,9 +15,11 @@ class SearchTestsController: UIViewController, UITableViewDelegate, UITableViewD
     lazy var searchTextField = SearchTextField()
     lazy var testsTableView = UITableView()
     
+    lazy var testPassingController = TestPassingController()
+    
     var constants: Constants?
-    var tests: TestsParameters = TestsParameters()
     var api: TestsAPI = TestsAPI()
+    var tests: TestsParameters = TestsParameters()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,7 +90,7 @@ class SearchTestsController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func refresh() {
-        api.getTestsDescriptions(query: self.tests.query) { [weak self] t in
+        self.api.getTestsDescriptions(query: self.tests.query) { [weak self] t in
             self?.tests.searchedTests = t 
             self?.testsTableView.reloadData()
         }
@@ -119,7 +122,12 @@ extension SearchTestsController {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Title: \(tests.searchedTests[indexPath.row].title)")
+        print("test id: \(tests.searchedTests[indexPath.row].id)")
+        self.api.getFullTest(id: tests.searchedTests[indexPath.row].id) { t in
+            self.testPassingController.setupStartViews(testContent: t)
+            self.testPassingController.modalPresentationStyle = .fullScreen
+            self.present(self.testPassingController, animated: true, completion: nil)
+        }
     }
     
     
