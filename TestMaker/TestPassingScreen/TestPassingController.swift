@@ -11,7 +11,7 @@ import UIKit
 class TestPassingController: UIViewController {
     
     lazy var backgroundView = BackgroundBlureView()
-    lazy var startView = StartView()
+    lazy var startView = StartTestView()
     lazy var questionView = UIView()
     lazy var endView = UIView()
     

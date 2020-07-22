@@ -11,16 +11,16 @@ import UIKit
 
 typealias CancelationProcess = () -> Void
 
-class StartView: UIView {
+class StartTestView: UIView {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UITextView!
+    @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var likesButton: UIButton!
     @IBOutlet weak var gamesLabel: UILabel!
     @IBOutlet weak var questionsLabel: UILabel!
     
-    let nibName = "StartView"
+    let nibName = "StartTestView"
     
     var cancelFunc: CancelationProcess?
     
@@ -43,7 +43,7 @@ class StartView: UIView {
     func setupWith(title: String, description: String, author: String, questionsNum: Int, games: Int, likes: Int) {
         titleLabel.text = title
         authorLabel.text = "Автор: \(author)"
-        descriptionLabel.text = "Описание:\n\(description)"
+        descriptionTextView.text = "Описание:\n\(description)"
         questionsLabel.text = "❓: \(questionsNum)"
         gamesLabel.text = "🎮: \(games)"
         likesButton.setTitle("👍: \(likes)", for: .normal)
