@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuestionView" customModule="TestMaker" customModuleProvider="target">
+            <connections>
+                <outlet property="buttonA" destination="wyv-WG-Fad" id="Ipm-CG-haD"/>
+                <outlet property="buttonB" destination="HT5-Fr-lDc" id="TSb-my-mqC"/>
+                <outlet property="buttonC" destination="ujA-t6-cZs" id="279-oz-Df1"/>
+                <outlet property="buttonD" destination="hVN-7P-QHo" id="LFe-yV-er7"/>
+                <outlet property="questionLabel" destination="iLV-nk-wcf" id="7wy-9B-ZKa"/>
+                <outlet property="questionNumLabel" destination="45v-u9-jJk" id="9SS-vj-p8b"/>
+                <outlet property="timeLabel" destination="fjB-6F-Mgw" id="nxh-wt-Qzp"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Ca2-tr-g3Z">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLV-nk-wcf" userLabel="questionText">
+                    <rect key="frame" x="20" y="377.66666666666669" width="374" height="38.333333333333314"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7pF-P7-ngC">
+                    <rect key="frame" x="20" y="436" width="374" height="24"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Время: 30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="fjB-6F-Mgw" userLabel="time">
+                            <rect key="frame" x="0.0" y="0.0" width="182" height="24"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вопрос" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="45v-u9-jJk" userLabel="questionNum">
+                            <rect key="frame" x="192" y="0.0" width="182" height="24"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PcA-9K-vnJ">
+                    <rect key="frame" x="20" y="480" width="374" height="186"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wyv-WG-Fad" userLabel="A">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="39"/>
+                            <color key="backgroundColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="0.75262200342465757" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            <state key="normal" title="A">
+                                <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </state>
+                            <connections>
+                                <action selector="buttonATap:" destination="-1" eventType="touchUpInside" id="e9N-45-6wq"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HT5-Fr-lDc" userLabel="B">
+                            <rect key="frame" x="0.0" y="49" width="374" height="39"/>
+                            <color key="backgroundColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="0.76000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            <state key="normal" title="B">
+                                <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </state>
+                            <connections>
+                                <action selector="buttonBTap:" destination="-1" eventType="touchUpInside" id="Vrb-lX-KBK"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ujA-t6-cZs" userLabel="C">
+                            <rect key="frame" x="0.0" y="98" width="374" height="39"/>
+                            <color key="backgroundColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="0.75131100171232879" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            <state key="normal" title="C">
+                                <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </state>
+                            <connections>
+                                <action selector="buttonCTap:" destination="-1" eventType="touchUpInside" id="XmM-HR-nYb"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVN-7P-QHo" userLabel="D">
+                            <rect key="frame" x="0.0" y="147" width="374" height="39"/>
+                            <color key="backgroundColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="0.76000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            <state key="normal" title="D">
+                                <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </state>
+                            <connections>
+                                <action selector="buttonDTap:" destination="-1" eventType="touchUpInside" id="bI9-nl-DC9"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="7pF-P7-ngC" firstAttribute="leading" secondItem="LRQ-fe-aLO" secondAttribute="leading" constant="20" id="3ep-UU-nI5"/>
+                <constraint firstItem="PcA-9K-vnJ" firstAttribute="leading" secondItem="LRQ-fe-aLO" secondAttribute="leading" constant="20" id="5uc-FK-Zjl"/>
+                <constraint firstItem="7pF-P7-ngC" firstAttribute="centerX" secondItem="Ca2-tr-g3Z" secondAttribute="centerX" id="6TN-sz-3wF"/>
+                <constraint firstItem="iLV-nk-wcf" firstAttribute="top" relation="greaterThanOrEqual" secondItem="LRQ-fe-aLO" secondAttribute="top" constant="30" id="9vK-i3-iIt"/>
+                <constraint firstItem="7pF-P7-ngC" firstAttribute="top" secondItem="iLV-nk-wcf" secondAttribute="bottom" constant="20" id="Ae2-bG-tc1"/>
+                <constraint firstItem="LRQ-fe-aLO" firstAttribute="trailing" secondItem="iLV-nk-wcf" secondAttribute="trailing" constant="20" id="C8U-RP-WMH"/>
+                <constraint firstItem="LRQ-fe-aLO" firstAttribute="trailing" secondItem="7pF-P7-ngC" secondAttribute="trailing" constant="20" id="I80-WO-9Ag"/>
+                <constraint firstItem="LRQ-fe-aLO" firstAttribute="trailing" secondItem="PcA-9K-vnJ" secondAttribute="trailing" constant="20" id="XcL-O2-RYm"/>
+                <constraint firstItem="LRQ-fe-aLO" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="PcA-9K-vnJ" secondAttribute="bottom" constant="10" id="dfm-h8-UdH"/>
+                <constraint firstItem="iLV-nk-wcf" firstAttribute="leading" secondItem="LRQ-fe-aLO" secondAttribute="leading" constant="20" id="ewn-Bl-eOP"/>
+                <constraint firstItem="PcA-9K-vnJ" firstAttribute="top" secondItem="7pF-P7-ngC" secondAttribute="bottom" constant="20" id="kKs-qR-xWp"/>
+                <constraint firstItem="7pF-P7-ngC" firstAttribute="centerY" secondItem="Ca2-tr-g3Z" secondAttribute="centerY" id="kni-5T-5C9"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="LRQ-fe-aLO"/>
+            <point key="canvasLocation" x="200.00000000000003" y="-295.3125"/>
+        </view>
+    </objects>
+</document>

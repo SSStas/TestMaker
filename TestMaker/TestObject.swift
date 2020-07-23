@@ -23,11 +23,12 @@ struct Author: Decodable {
 struct TestDescription: Decodable {
     var title: String
     var description: String
-    var isGlobal: Bool
+    var code: String
     var author: Author
-    var games: Int?
+    var games: Int
     var likes: Int
     var id: String
+    var questionsCount: Int
     var questions: [Question]?
 }
 
@@ -42,5 +43,5 @@ struct Members: Decodable {
 struct Question: Decodable {
     var question: String
     var answers: [String]
-    var correct: [String]
+    var correct: [Int]
 }

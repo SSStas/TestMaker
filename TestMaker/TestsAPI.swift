@@ -129,8 +129,9 @@ class TestsAPI {
         let params: [String: Any] = [
             "title": testDescription.title,
             "description": testDescription.description,
-            "isGlobal": testDescription.isGlobal,
+            "code": testDescription.code,
             "author": ["name": testDescription.author.name, "id": testDescription.author.id],
+            "questionsCount": questionsArr.count,
             "questions" : questionsArr,
             "games": 0,
             "likes": 0
