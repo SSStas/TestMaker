@@ -21,14 +21,61 @@ class CreateTestController: UIViewController {
         return scroll
     }()
     
+    var testDescription: TestDescription!
+    var questions: [Question] = []
+    var isNew = false
+    var questionIndex = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        addOptions.delegate = self
         setupBackground()
         addTapGestureToHideKeyboard()
-        
         backgroundView.backgroundImageView.tintColor = .blue
+        presentData()
+        
+        let nweBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(save))
+        navigationItem.rightBarButtonItem = nweBarButton
     }
+    
+    @objc func save() {
+        testDescription.questions = questions
+        
+        //СОХРАНЕНИЕ НА СЕРВЕР ДОЛЖНО НАЧИНАТЬСЯ ТУТ
+    }
+    
+    private func showData() {
+        
+        let newQuestion = questions[questionIndex]
+        addQuestion.showData(question: newQuestion)
+        addOptions.showData(question: newQuestion)
+    }
+    
+    private func addNewQuestion() {
+        
+        let quest = addQuestion.inputGuestionTextField.text ?? ""
+        let ansOne = addOptions.optionOneTextField.text ?? ""
+        let ansTwo = addOptions.optionTwoTextField.text ?? ""
+        let ansThree = addOptions.optionthreeTextField.text ?? ""
+        let ansFour = addOptions.optionFourTextField.text ?? ""
+        
+        let new = Question(question: quest, answers: [ansOne, ansTwo, ansThree, ansFour], correct: [2])
+        questions.append(new)
+    }
+    
+    private func correctQuestion() {
+        
+        let quest = addQuestion.inputGuestionTextField.text ?? ""
+        let ansOne = addOptions.optionOneTextField.text ?? ""
+        let ansTwo = addOptions.optionTwoTextField.text ?? ""
+        let ansThree = addOptions.optionthreeTextField.text ?? ""
+        let ansFour = addOptions.optionFourTextField.text ?? ""
+        
+        let new = Question(question: quest, answers: [ansOne, ansTwo, ansThree, ansFour], correct: [1])
+        questions[questionIndex] = new
+    }
+
     
     private func setupBackground() {
         
@@ -51,9 +98,73 @@ class CreateTestController: UIViewController {
         view.addGestureRecognizer(tapGesture)
     }
     
-    
-    
+    private func presentData() {
+        if questions.count == 0 {
+            addQuestion.showEmptyScreen()
+            addOptions.showEmptyScreen()
+            isNew = true
+            addOptions.pastButton.isHidden = true
+        } else {
+            if questionIndex == questions.count {
+                addQuestion.showEmptyScreen()
+                addOptions.showEmptyScreen()
+            } else {
+                showData()
+            }
+        }
+    }
 }
 
-
-
+//TODO: - Переделать логику
+extension CreateTestController: AddOptionsViewDelegate {
+    func nextButton() {
+        
+        for i in 0..<questions.count where i == questionIndex {
+            correctQuestion()
+        }
+        
+        questionIndex += 1
+        
+        if isNew {
+            addNewQuestion()
+            isNew = false
+        }
+        
+        if questionIndex == questions.count {
+            isNew = true
+            presentData()
+        } else {
+            presentData()
+        }
+        
+        if questionIndex <= 0 {
+            addOptions.pastButton.isHidden = true
+            questionIndex = 0
+        } else {
+            addOptions.pastButton.isHidden = false
+        }
+    }
+    
+    func backButton() {
+        
+        for i in 0..<questions.count where i == questionIndex {
+            correctQuestion()
+        }
+        
+        questionIndex -= 1
+        
+        if isNew {
+            addNewQuestion()
+            isNew = false
+        }
+        
+        if questionIndex <= 0 {
+            addOptions.pastButton.isHidden = true
+            questionIndex = 0
+        } else {
+            addOptions.pastButton.isHidden = false
+        }
+        
+        presentData()
+    }
+}

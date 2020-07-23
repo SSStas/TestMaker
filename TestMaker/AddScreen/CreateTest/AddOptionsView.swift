@@ -28,8 +28,10 @@ class AddOptionsView: BackgroundBlureView {
     lazy var fourButton = UIButton(type: .system)
     
     var leadingConstraint: CGFloat = 15.0
-    //isEnable
+    
     var checkButtons: [UIButton] = []
+    weak var delegate: AddOptionsViewDelegate?
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -92,6 +94,22 @@ class AddOptionsView: BackgroundBlureView {
         setupOptionFourTextField()
         setupPastButton()
         setupFutureButton()
+    }
+    
+    func showEmptyScreen() {
+        
+        optionOneTextField.text = ""
+        optionTwoTextField.text = ""
+        optionthreeTextField.text = ""
+        optionFourTextField.text = ""
+    }
+    
+    func showData(question: Question) {
+        
+        optionOneTextField.text = question.answers[0]
+        optionTwoTextField.text = question.answers[1]
+        optionthreeTextField.text = question.answers[2]
+        optionFourTextField.text = question.answers[3]
     }
     
     private func setupOptionOneLable() {
@@ -191,7 +209,7 @@ class AddOptionsView: BackgroundBlureView {
         optionthreeTextField.placeholder = "Введите ответ"
         optionthreeTextField.font = .systemFont(ofSize: 20)
         optionthreeTextField.textColor = .gray
-        
+
         NSLayoutConstraint.activate([
             optionthreeTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8),
             optionthreeTextField.leadingAnchor.constraint(equalTo: threeButton.trailingAnchor, constant: leadingConstraint),
@@ -243,6 +261,8 @@ class AddOptionsView: BackgroundBlureView {
         let image = UIImage(systemName: "arrowshape.turn.up.left")
         pastButton.setImage(image, for: .normal)
         
+        pastButton.addTarget(self, action: #selector(tapBackButton), for: .touchUpInside)
+        
         NSLayoutConstraint.activate([
             pastButton.widthAnchor.constraint(equalToConstant: 72),
             pastButton.heightAnchor.constraint(equalToConstant: 72),
@@ -262,12 +282,22 @@ class AddOptionsView: BackgroundBlureView {
         let image = UIImage(systemName: "arrowshape.turn.up.right")
         futureButton.setImage(image, for: .normal)
         
+        futureButton.addTarget(self, action: #selector(tapNextButton), for: .touchUpInside)
+        
         NSLayoutConstraint.activate([
             futureButton.widthAnchor.constraint(equalToConstant: 72),
             futureButton.heightAnchor.constraint(equalToConstant: 72),
             futureButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15),
             futureButton.topAnchor.constraint(equalTo: optionFourTextField.bottomAnchor, constant: 8)
         ])
+    }
+    
+    @objc private func tapBackButton() {
+        delegate?.backButton()
+    }
+    
+    @objc private func tapNextButton() {
+        delegate?.nextButton()
     }
     
     private func setupOneButton() {
@@ -349,4 +379,10 @@ class AddOptionsView: BackgroundBlureView {
             fourButton.topAnchor.constraint(equalTo:threeButton.bottomAnchor, constant: 16)
         ])
     }
+}
+
+protocol AddOptionsViewDelegate: class {
+    
+    func nextButton()
+    func backButton()
 }

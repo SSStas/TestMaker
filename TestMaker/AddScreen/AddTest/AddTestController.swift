@@ -12,6 +12,7 @@ class AddTestController: UIViewController {
     
     lazy var backgroundView = BackgroundBlureView()
     lazy var addView = AddView()
+    var testDescription: TestDescription!
     
     let iphoneContentView = UIView()
     lazy var iphoneScrollView: UIScrollView = {
@@ -26,6 +27,7 @@ class AddTestController: UIViewController {
         
         setupBackground()
         setupIphoneViews()
+        addTapGestureToHideKeyboard()
         
         addView.delegate = self
         backgroundView.backgroundImageView.tintColor = .blue
@@ -48,12 +50,32 @@ class AddTestController: UIViewController {
         ])
         
     }
+    
+    func addTapGestureToHideKeyboard() {
+        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(view.endEditing))
+        view.addGestureRecognizer(tapGesture)
+    }
 }
 
 extension AddTestController: ToCreateQuestionDelegate {
     func toCreateQuestion() {
-        navigationController?.show(CreateTestController(), sender: self)
+        
+        if let name = addView.testNameTextField.text, name != "" {
+            
+            testDescription = TestDescription(title: name,
+                                              description: addView.testNameTextField.text ?? "",
+                                              code: addView.testPasswordLabelTextField.text ?? "",
+                                              author: Author(name: "", id: ""),
+                                              games: 0,
+                                              likes: 0,
+                                              id: "",
+                                              questionsCount: 0,
+                                              questions: nil)
+            
+            let vc = CreateTestController()
+            vc.testDescription = testDescription
+            navigationController?.show(vc, sender: self)
+        }
     }
-    
-    
+
 }

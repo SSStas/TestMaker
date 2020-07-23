@@ -42,6 +42,7 @@ class AddView: BackgroundBlureView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        testPhotoImage.layer.masksToBounds = true
         testPhotoImage.layer.cornerRadius = 10
     }
     
@@ -83,7 +84,7 @@ class AddView: BackgroundBlureView {
         
         addNewView(testSectionLabel)
         
-        testSectionLabel.text = "Раздел"
+        testSectionLabel.text = "Описание"
         testSectionLabel.font = .systemFont(ofSize: 25)
         
         NSLayoutConstraint.activate([
@@ -130,8 +131,8 @@ class AddView: BackgroundBlureView {
         nextButton.translatesAutoresizingMaskIntoConstraints = false
         
         nextButton.addTarget(self, action: #selector(toNextAddScreen), for: .touchUpInside)
-        addNewView(nextButton)
         
+        addNewView(nextButton)
         
         nextButton.titleLabel?.font =  .systemFont(ofSize: 25)
         nextButton.setTitle("Продолжить", for: .normal)
@@ -144,7 +145,9 @@ class AddView: BackgroundBlureView {
     }
     
     @objc func toNextAddScreen() {
-        delegate?.toCreateQuestion()
+        if testNameTextField.text != ""{
+            delegate?.toCreateQuestion()
+        }
     }
     
     private func setupTestNameTextField() {
@@ -189,7 +192,7 @@ class AddView: BackgroundBlureView {
         
         addNewView(testPasswordLabelTextField)
         
-        testPasswordLabelTextField.placeholder = "***"
+        testPasswordLabelTextField.placeholder = "(не обязательно)"
         testPasswordLabelTextField.font = .systemFont(ofSize: 20)
         testPasswordLabelTextField.textColor = .gray
         
@@ -202,14 +205,13 @@ class AddView: BackgroundBlureView {
     private func setupTestPhotoImage() {
         
         testPhotoImage.translatesAutoresizingMaskIntoConstraints = false
+        testPhotoImage.image = UIImage(named: "BasePhoto")
         
-        testPhotoImage.backgroundColor = .red
-        
-        addNewView(testPhotoImage)
+        self.addSubview(testPhotoImage)
         
         NSLayoutConstraint.activate([
             testPhotoImage.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8),
-            testPhotoImage.topAnchor.constraint(equalTo:  testPasswordLabelTextField.bottomAnchor, constant: 8),
+            testPhotoImage.bottomAnchor.constraint(equalTo:  self.bottomAnchor, constant: -55),
             testPhotoImage.widthAnchor.constraint(equalToConstant: 80),
             testPhotoImage.heightAnchor.constraint(equalToConstant: 80)
         ])

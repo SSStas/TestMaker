@@ -32,8 +32,20 @@ class AddQuestionView: BackgroundBlureView {
         self.layer.cornerRadius = self.bounds.width / 7
     }
     
+    func showEmptyScreen() {
+        inputGuestionTextField.text = "Placeholder"
+        inputGuestionTextField.textColor = UIColor.lightGray
+    }
+    
+    func showData(question: Question) {
+        inputGuestionTextField.text = question.question
+    }
+    
+    
     private func setupViews() {
         setupBackgroundView(isBackground: false, isBlure: true, isVibrancy: true)
+        
+        inputGuestionTextField.delegate = self
         
         setupInputGuestionLable()
         setupInputGuestionTextField()
@@ -45,7 +57,7 @@ class AddQuestionView: BackgroundBlureView {
         
         addNewView(inputGuestionLable)
         
-        inputGuestionLable.text = "Введите вопрос "
+        inputGuestionLable.text = "Введите вопрос: "
         inputGuestionLable.font = .systemFont(ofSize: 25)
         
         NSLayoutConstraint.activate([
@@ -71,5 +83,21 @@ class AddQuestionView: BackgroundBlureView {
             inputGuestionTextField.topAnchor.constraint(equalTo: inputGuestionLable.bottomAnchor, constant: 15),
             inputGuestionTextField.heightAnchor.constraint(equalToConstant: 100)
         ])
+    }
+}
+
+extension AddQuestionView: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Placeholder"
+            textView.textColor = UIColor.lightGray
+        }
     }
 }
