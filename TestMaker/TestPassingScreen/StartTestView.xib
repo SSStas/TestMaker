@@ -26,7 +26,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="miq-gl-oGt">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BasePhoto" translatesAutoresizingMaskIntoConstraints="NO" id="miq-gl-oGt">
                     <rect key="frame" x="10" y="44" width="394" height="311"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="311" id="lLW-hU-1It"/>
@@ -159,6 +159,7 @@
         </view>
     </objects>
     <resources>
+        <image name="BasePhoto" width="1800" height="1200"/>
         <image name="arrowshape.turn.up.left.2.fill" catalog="system" width="128" height="87"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
         <namedColor name="BackgroundColor">
