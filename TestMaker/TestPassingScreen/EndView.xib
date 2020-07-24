@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EndView" customModule="TestMaker" customModuleProvider="target">
+            <connections>
+                <outlet property="labelView" destination="8hn-XK-qES" id="403-GP-fTI"/>
+                <outlet property="okButton" destination="uIZ-0A-FUk" id="v2L-xo-WcM"/>
+                <outlet property="textLabel" destination="Qy4-da-70x" id="O3Y-bF-4tF"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="0Sy-yS-8n4">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8hn-XK-qES">
+                    <rect key="frame" x="20" y="413.5" width="374" height="69"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qy4-da-70x" userLabel="Text">
+                            <rect key="frame" x="20" y="20" width="334" height="29"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" name="BackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="Qy4-da-70x" firstAttribute="leading" secondItem="8hn-XK-qES" secondAttribute="leading" constant="20" id="9E7-NZ-CuS"/>
+                        <constraint firstAttribute="bottom" secondItem="Qy4-da-70x" secondAttribute="bottom" constant="20" id="H0Y-cy-jTB"/>
+                        <constraint firstAttribute="trailing" secondItem="Qy4-da-70x" secondAttribute="trailing" constant="20" id="nfa-88-CYF"/>
+                        <constraint firstItem="Qy4-da-70x" firstAttribute="top" secondItem="8hn-XK-qES" secondAttribute="top" constant="20" id="sFO-OQ-tUo"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="uIZ-0A-FUk" userLabel="Start">
+                    <rect key="frame" x="134" y="785" width="146" height="67"/>
+                    <color key="backgroundColor" name="BackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="146" id="QbN-NA-85L"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <color key="tintColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <inset key="contentEdgeInsets" minX="0.0" minY="20" maxX="0.0" maxY="20"/>
+                    <inset key="titleEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
+                    <state key="normal" title="Ок">
+                        <color key="titleColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="bold"/>
+                    </state>
+                    <connections>
+                        <action selector="okButtonTap:" destination="-1" eventType="touchUpInside" id="nut-VR-kBS"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="8hn-XK-qES" firstAttribute="centerY" secondItem="0Sy-yS-8n4" secondAttribute="centerY" id="1rn-1x-4by"/>
+                <constraint firstItem="75A-wj-VGV" firstAttribute="bottom" secondItem="uIZ-0A-FUk" secondAttribute="bottom" constant="10" id="249-wW-WiG"/>
+                <constraint firstItem="75A-wj-VGV" firstAttribute="trailing" secondItem="8hn-XK-qES" secondAttribute="trailing" constant="20" id="33A-cs-G3z"/>
+                <constraint firstItem="8hn-XK-qES" firstAttribute="centerX" secondItem="0Sy-yS-8n4" secondAttribute="centerX" id="UXq-tk-0vP"/>
+                <constraint firstItem="uIZ-0A-FUk" firstAttribute="top" relation="greaterThanOrEqual" secondItem="8hn-XK-qES" secondAttribute="bottom" constant="20" id="eY3-kZ-Ufa"/>
+                <constraint firstItem="8hn-XK-qES" firstAttribute="leading" secondItem="75A-wj-VGV" secondAttribute="leading" constant="20" id="lm3-lD-Qbz"/>
+                <constraint firstItem="uIZ-0A-FUk" firstAttribute="centerX" secondItem="0Sy-yS-8n4" secondAttribute="centerX" id="lrU-6V-INt"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="75A-wj-VGV"/>
+            <point key="canvasLocation" x="83" y="94"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="BackgroundColor">
+            <color red="0.96853452920000005" green="0.96876066920000004" blue="0.96442884210000002" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

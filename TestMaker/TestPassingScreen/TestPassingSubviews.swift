@@ -127,6 +127,7 @@ class QuestionView: UIView {
     func setupWith(questionsNum: Int) {
         self.questionsNum = questionsNum
         self.questionIndex = 0
+        self.myCorrectAnswers = 0
         self.time = 30
         
         self.isButtonsBlocked = false
@@ -149,10 +150,9 @@ class QuestionView: UIView {
                     (_, _) in arc4random() < arc4random()
                 })
                 
+                self.time = 30
+                
                 correctAnswersIndex = q.correct
-                print("buttonAnswersIndex: \(buttonAnswersIndex)")
-                print("answerTexts: \(q.answers)")
-                print("correctAnswersIndex: \(correctAnswersIndex)")
                 self.setupButtons(q.answers)
                 
                 self.createTimer(true)
@@ -182,10 +182,10 @@ class QuestionView: UIView {
     }
      
     func normalButtonsColor() {
-        buttonA.backgroundColor = .gray
-        buttonB.backgroundColor = .gray
-        buttonC.backgroundColor = .gray
-        buttonD.backgroundColor = .gray
+        buttonA.backgroundColor = UIColor(named: "BackgroundColor")
+        buttonB.backgroundColor = UIColor(named: "BackgroundColor")
+        buttonC.backgroundColor = UIColor(named: "BackgroundColor")
+        buttonD.backgroundColor = UIColor(named: "BackgroundColor")
     }
     
     /// Gets index of your button as answer
@@ -196,16 +196,16 @@ class QuestionView: UIView {
             if i == index || isCorrect {
                 switch i {
                     case 0:
-                        buttonA.backgroundColor = (isCorrect ? .green : .red)
+                        buttonA.backgroundColor = UIColor(named: isCorrect ? "BackgroundGreenColor" : "BackgroundRedColor")
                         break
                     case 1:
-                        buttonB.backgroundColor = (isCorrect ? .green : .red)
+                        buttonB.backgroundColor = UIColor(named: isCorrect ? "BackgroundGreenColor" : "BackgroundRedColor")
                         break
                     case 2:
-                        buttonC.backgroundColor = (isCorrect ? .green : .red)
+                        buttonC.backgroundColor = UIColor(named: isCorrect ? "BackgroundGreenColor" : "BackgroundRedColor")
                         break
                     case 3:
-                        buttonD.backgroundColor = (isCorrect ? .green : .red)
+                        buttonD.backgroundColor = UIColor(named: isCorrect ? "BackgroundGreenColor" : "BackgroundRedColor")
                         break
                     default:
                         break
@@ -215,6 +215,7 @@ class QuestionView: UIView {
                 self.myCorrectAnswers += 1
             }
         }
+        print(self.myCorrectAnswers)
         
         self.isButtonsBlocked = true
         
@@ -225,7 +226,7 @@ class QuestionView: UIView {
     @objc func completeTimer() {
         timeLabel.text = "Время: \(self.time)"
         self.time -= 1
-        if self.time <= 0 {
+        if self.time < 0 {
             self.cancelTimer()
             self.answer(index: -1)
         }
@@ -263,6 +264,10 @@ class QuestionView: UIView {
 
 class EndView: UIView {
     
+    @IBOutlet weak var textLabel: UILabel!
+    @IBOutlet weak var labelView: UIView!
+    @IBOutlet weak var okButton: UIButton!
+    
     let nibName = "EndView"
     
     var cancelFunc: ButtonPressProcess?
@@ -277,7 +282,16 @@ class EndView: UIView {
         loadViewFromNib(nibName: self.nibName)
     }
     
-    func setupWith(_ resul: Int) {
+    @IBAction func okButtonTap(_ sender: Any) {
+        if let f = self.cancelFunc {
+            f()
+        }
+    }
+    
+    func setupWith(resul: Int, numQuestions: Int) {
+        labelView.layer.cornerRadius = 10
+        okButton.layer.cornerRadius = 10
         
+        textLabel.text = "Вы правильно ответили на \(resul) вопросов из \(numQuestions)"
     }
 }

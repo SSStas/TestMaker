@@ -13,7 +13,7 @@ class TestPassingController: UIViewController {
     lazy var backgroundView = BackgroundBlureView()
     lazy var startView = StartTestView()
     lazy var questionView = QuestionView()
-    lazy var endView = UIView()
+    lazy var endView = EndView()
     
     var constants: Constants = Constants()
     
@@ -86,6 +86,10 @@ class TestPassingController: UIViewController {
         
         self.view.addSubview(endView)
         
+        self.endView.cancelFunc = self.closeController
+        
+        self.endView.setupWith(resul: results, numQuestions: self.choosenTest?.questionsCount ?? 0)
+        
         NSLayoutConstraint.activate([
             endView.topAnchor.constraint(equalTo: self.view.topAnchor),
             endView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
@@ -124,8 +128,8 @@ class TestPassingController: UIViewController {
     }
     
     func endTest(_ rightAnswers: Int) {
-        //self.questionView.removeFromSuperview()
-        
+        self.questionView.removeFromSuperview()
+        self.setupEndView(rightAnswers)
     }
     
     func getQuestion(_ index: Int) -> Question? {

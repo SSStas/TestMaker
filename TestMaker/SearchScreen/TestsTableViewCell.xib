@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -24,59 +25,58 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Elw-wB-L6e">
                         <rect key="frame" x="140" y="5" width="303" height="21.5"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By: --------------------------" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="snq-4T-Ybt" userLabel="Author">
                         <rect key="frame" x="140" y="33.5" width="174" height="14.5"/>
                         <gestureRecognizers/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🎮 :1000M" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="7ne-D6-2gv" userLabel="Games">
                         <rect key="frame" x="140" y="97" width="76.5" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👍: 1000M" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="gxw-R0-sqH" userLabel="Likes">
                         <rect key="frame" x="228.5" y="97" width="76.5" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="❓:100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nz3-su-HB0" userLabel="Questions">
                         <rect key="frame" x="140" y="72" width="50.5" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dd.MM.yyyy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmI-BD-WnA" userLabel="Date">
-                        <rect key="frame" x="326" y="33.5" width="74" height="14.5"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="74" id="Nh4-dT-TGl"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                        <nil key="textColor"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="public" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcc-hN-ts8" userLabel="isGlobal">
+                        <rect key="frame" x="202.5" y="73" width="43" height="17"/>
+                        <gestureRecognizers/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                        <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" name="BackgroundColor"/>
                 <constraints>
                     <constraint firstItem="Elw-wB-L6e" firstAttribute="top" secondItem="kHK-Eg-oMO" secondAttribute="top" constant="5" id="4fr-PZ-6DC"/>
-                    <constraint firstItem="fmI-BD-WnA" firstAttribute="top" secondItem="Elw-wB-L6e" secondAttribute="bottom" constant="7" id="5TU-p6-oSl"/>
                     <constraint firstAttribute="bottom" secondItem="gxw-R0-sqH" secondAttribute="bottom" constant="5" id="7lD-1h-Spg"/>
                     <constraint firstItem="Nz3-su-HB0" firstAttribute="leading" secondItem="EB7-7F-jNi" secondAttribute="trailing" constant="5" id="AAo-6H-DCC"/>
                     <constraint firstItem="7ne-D6-2gv" firstAttribute="leading" secondItem="EB7-7F-jNi" secondAttribute="trailing" constant="5" id="BGr-ua-QpE"/>
                     <constraint firstItem="EB7-7F-jNi" firstAttribute="top" secondItem="kHK-Eg-oMO" secondAttribute="top" constant="5" id="BxZ-w5-1Do"/>
                     <constraint firstAttribute="bottom" secondItem="7ne-D6-2gv" secondAttribute="bottom" constant="5" id="Koi-BI-a9C"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gxw-R0-sqH" secondAttribute="trailing" constant="15" id="Qyx-uo-iWN"/>
-                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fmI-BD-WnA" secondAttribute="trailing" constant="15" id="RDv-XO-5hA"/>
+                    <constraint firstItem="mcc-hN-ts8" firstAttribute="leading" secondItem="Nz3-su-HB0" secondAttribute="trailing" constant="12" id="UXd-3B-mDX"/>
                     <constraint firstItem="snq-4T-Ybt" firstAttribute="top" secondItem="Elw-wB-L6e" secondAttribute="bottom" constant="7" id="VGQ-E5-nzb"/>
                     <constraint firstItem="7ne-D6-2gv" firstAttribute="top" secondItem="Nz3-su-HB0" secondAttribute="bottom" constant="7" id="W92-lt-STz"/>
-                    <constraint firstItem="fmI-BD-WnA" firstAttribute="leading" secondItem="snq-4T-Ybt" secondAttribute="trailing" constant="12" id="dgi-c6-Stq"/>
-                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Nz3-su-HB0" secondAttribute="trailing" constant="15" id="fV3-nE-eCc"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mcc-hN-ts8" secondAttribute="trailing" constant="15" id="Xj6-iL-2xC"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="snq-4T-Ybt" secondAttribute="trailing" constant="15" id="eXd-kx-kaX"/>
                     <constraint firstAttribute="bottom" secondItem="EB7-7F-jNi" secondAttribute="bottom" constant="5" id="g5l-sY-QeO"/>
+                    <constraint firstItem="gxw-R0-sqH" firstAttribute="top" secondItem="mcc-hN-ts8" secondAttribute="bottom" constant="7" id="h3B-EZ-aWG"/>
                     <constraint firstAttribute="trailing" secondItem="Elw-wB-L6e" secondAttribute="trailing" constant="15" id="knG-UH-I0C"/>
                     <constraint firstItem="gxw-R0-sqH" firstAttribute="leading" secondItem="7ne-D6-2gv" secondAttribute="trailing" constant="12" id="mwh-Yn-SmC"/>
                     <constraint firstItem="Elw-wB-L6e" firstAttribute="leading" secondItem="EB7-7F-jNi" secondAttribute="trailing" constant="5" id="pDB-un-Or0"/>
@@ -87,6 +87,7 @@
             <connections>
                 <outlet property="authorLabel" destination="snq-4T-Ybt" id="RWq-mY-3GE"/>
                 <outlet property="gamesLabel" destination="7ne-D6-2gv" id="pWO-Aq-MBE"/>
+                <outlet property="isGlobalLabel" destination="mcc-hN-ts8" id="t9q-L1-CnC"/>
                 <outlet property="likesLabel" destination="gxw-R0-sqH" id="p77-tV-ISW"/>
                 <outlet property="questionsLabel" destination="Nz3-su-HB0" id="G64-2V-wp0"/>
                 <outlet property="titleLabel" destination="Elw-wB-L6e" id="NW6-JI-1Ed"/>
@@ -94,4 +95,9 @@
             <point key="canvasLocation" x="253.62318840579712" y="21.428571428571427"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <namedColor name="BackgroundColor">
+            <color red="0.96853452920000005" green="0.96876066920000004" blue="0.96442884210000002" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

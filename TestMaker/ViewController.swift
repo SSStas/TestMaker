@@ -16,16 +16,15 @@ class ViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.addChild(self.vc)
-        //self.vc.modalPresentationStyle = .fullScreen
-        //self.view.addSubview(self.vc.view)
-        
         searchTests.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
         searchTests.setupViews(const: Constants(tabBarHeight: self.tabBar.frame.height))
         
-        addTest.tabBarItem = UITabBarItem(tabBarSystemItem: .mostViewed, tag: 1)
+        addTest.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 1)
         
-        let tabBarList = [searchTests, addTest]
+        let nVC = UINavigationController(rootViewController: addTest)
+        addTest.title = "Создать тест"
+        nVC.navigationBar.tintColor = .gray
+        let tabBarList = [searchTests, nVC]
 
         viewControllers = tabBarList
     }

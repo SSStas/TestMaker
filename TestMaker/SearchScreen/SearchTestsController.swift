@@ -26,11 +26,6 @@ class SearchTestsController: UIViewController, UITableViewDelegate, UITableViewD
         self.hideKeyboardWhenTappedAround()
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        // setNeedsStatusBarAppearanceUpdate() - обновляет данную переменую
-        return .lightContent
-    }
-    
     func setupViews(const: Constants) {
         
         self.constants = const
@@ -76,6 +71,7 @@ class SearchTestsController: UIViewController, UITableViewDelegate, UITableViewD
         testsTableView.dataSource = self
         testsTableView.register(UINib(nibName: "TestsTableViewCell", bundle: nil), forCellReuseIdentifier: "TestsTableViewCell")
         testsTableView.tableFooterView = UIView()
+        testsTableView.backgroundColor = .clear
         testsTableView.rowHeight = 120
         testsTableView.delegate = self
         
@@ -117,7 +113,7 @@ extension SearchTestsController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TestsTableViewCell", for: indexPath) as? TestsTableViewCell else {
             return TestsTableViewCell()
         }
-        cell.setupWith(title: tests.searchedTests[indexPath.row].title, author: tests.searchedTests[indexPath.row].author.name, questionsNum: 0, games: tests.getTestNumParam(indexPath.row, true), likes: tests.getTestNumParam(indexPath.row, false))
+        cell.setupWith(title: tests.searchedTests[indexPath.row].title, author: tests.searchedTests[indexPath.row].author.name, questionsNum: tests.searchedTests[indexPath.row].questionsCount, games: tests.getTestNumParam(indexPath.row, true), likes: tests.getTestNumParam(indexPath.row, false), isGlobal: tests.searchedTests[indexPath.row].code == "")
         return cell
     }
     

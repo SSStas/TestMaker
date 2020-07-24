@@ -42,7 +42,8 @@ class CreateTestController: UIViewController {
     @objc func save() {
         testDescription.questions = questions
         
-        //СОХРАНЕНИЕ НА СЕРВЕР ДОЛЖНО НАЧИНАТЬСЯ ТУТ
+        let api = TestsAPI()
+        api.createNewTest(testDescription: testDescription)
     }
     
     private func showData() {

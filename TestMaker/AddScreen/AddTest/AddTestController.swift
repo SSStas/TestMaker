@@ -63,7 +63,7 @@ extension AddTestController: ToCreateQuestionDelegate {
         if let name = addView.testNameTextField.text, name != "" {
             
             testDescription = TestDescription(title: name,
-                                              description: addView.testNameTextField.text ?? "",
+                                              description: addView.testSectionTextField.text ?? "",
                                               code: addView.testPasswordLabelTextField.text ?? "",
                                               author: Author(name: "", id: ""),
                                               games: 0,

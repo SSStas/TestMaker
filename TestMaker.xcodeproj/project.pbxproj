@@ -20,6 +20,7 @@
 		04147CF024C891F100895279 /* TestPassingSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04147CEC24C84D9B00895279 /* TestPassingSubviews.swift */; };
 		04147CF224C8990700895279 /* StartTestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04147CF124C8990700895279 /* StartTestView.xib */; };
 		04147CF424C8E2B400895279 /* QuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04147CF324C8E2B300895279 /* QuestionView.xib */; };
+		04147CF624CA511E00895279 /* EndView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04147CF524CA511A00895279 /* EndView.xib */; };
 		0424B9C624BC88170004EB71 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0424B9C524BC88170004EB71 /* .gitignore */; };
 		0424B9C824BCA8DF0004EB71 /* TestObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424B9C724BCA8DF0004EB71 /* TestObject.swift */; };
 		0424B9CA24BCB3A60004EB71 /* TestsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424B9C924BCB3A60004EB71 /* TestsAPI.swift */; };
@@ -72,6 +73,7 @@
 		04147CEC24C84D9B00895279 /* TestPassingSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPassingSubviews.swift; sourceTree = "<group>"; };
 		04147CF124C8990700895279 /* StartTestView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartTestView.xib; sourceTree = "<group>"; };
 		04147CF324C8E2B300895279 /* QuestionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionView.xib; sourceTree = "<group>"; };
+		04147CF524CA511A00895279 /* EndView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EndView.xib; sourceTree = "<group>"; };
 		0424B9C524BC88170004EB71 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		0424B9C724BCA8DF0004EB71 /* TestObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestObject.swift; sourceTree = "<group>"; };
 		0424B9C924BCB3A60004EB71 /* TestsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsAPI.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				04147CE824C7867100895279 /* TestPassingController.swift */,
 				04147CF124C8990700895279 /* StartTestView.xib */,
 				04147CF324C8E2B300895279 /* QuestionView.xib */,
+				04147CF524CA511A00895279 /* EndView.xib */,
 			);
 			path = TestPassingScreen;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				0424B9CF24C06DC30004EB71 /* SearchView.xib in Resources */,
 				047B3FB424BC801D009D53B1 /* LaunchScreen.storyboard in Resources */,
 				04147CF424C8E2B400895279 /* QuestionView.xib in Resources */,
+				04147CF624CA511E00895279 /* EndView.xib in Resources */,
 				047B3FB124BC801D009D53B1 /* Assets.xcassets in Resources */,
 				047B3FAC24BC801A009D53B1 /* Main.storyboard in Resources */,
 				0424B9D124C1D3AB0004EB71 /* TestsTableViewCell.xib in Resources */,
